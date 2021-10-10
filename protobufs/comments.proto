@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+service comments {
+    rpc get_comments (CourseRequest) returns (CommentResponse);
+}
+
+message CourseRequest{
+    int32 course_id = 1;
+}
+
+message CommentProp{
+  string comment = 1;
+  int32 comment_id =2;
+}
+
+message CommentResponse {
+  repeated CommentProp results = 1;
+}
